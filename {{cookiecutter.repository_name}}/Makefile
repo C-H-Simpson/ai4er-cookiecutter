@@ -54,16 +54,18 @@ endif
 install_jupyter_tools:
 	sh ./.setup_scripts/jupyter_tools.sh
 
-## Set up sweet vscode settings
-vscode_beautiful:
-	mkdir .vscode
-	cp ./.setup_scripts/vscode_settings.jsonc .vscode/settings.json
 
 #################################################################################
 # PROJECT RULES                                                                 #
 #################################################################################
 
-# TODO: VSCode setup
+## Turn 'src' code into a module.
+src.egg-info:
+	python setup.py develop
+
+## Generate notebooks from scripts.
+notebooks/%.ipynb: notebooks/%.py src.egg-info
+	jupytext --to notebook --output $@ --execute $<
 
 
 #################################################################################
