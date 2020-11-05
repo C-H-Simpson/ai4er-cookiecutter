@@ -1,4 +1,4 @@
-.PHONY: clean lint format create_environment install_jupyter_tools
+.PHONY: clean lint format create_environment install_jupyter_tools test
 
 #################################################################################
 # GLOBALS                                                                       #
@@ -59,8 +59,12 @@ install_jupyter_tools:
 # PROJECT RULES                                                                 #
 #################################################################################
 
-## Turn 'src' code into a module.
-src.egg-info:
+## Run test suite
+test:
+	python -m src.tests.test_all
+
+## Turn 'src' code into a module. Convenient for running code from notebooks.
+src.egg-info: setup.py
 	python setup.py develop
 
 ## Generate notebooks from scripts.
