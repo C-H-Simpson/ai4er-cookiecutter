@@ -5,5 +5,16 @@ channels:
 dependencies:
   - python={{cookiecutter.python_version}}
   - pip
+  - numpy
+  - scipy
+  - pandas
+  - xarray
+  - numba
+  - matplotlib
+  - geopandas
+  - cartopy
+  - regionmask
   - pip:
     - -r file:dev-requirements.txt
+    - netcdf4
+    - jupyter

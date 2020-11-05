@@ -11,3 +11,8 @@ mypy                # python type checker
 black               # automatic formatting provider
 isort               # automatic import sorter
 python-dotenv       # environment variable manager
+jedi                # another linter I use
+pylint              # another linter I use
+jupytext            # for converting between notebooks and scripts
+nbconvert           # backend for jupytext
+node                # required for CoC, which I use in nvim
