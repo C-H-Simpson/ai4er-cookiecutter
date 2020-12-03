@@ -15,6 +15,7 @@ dependencies:
   - cartopy
   - regionmask
   - descartes
+  - jupyterlab
   - pip:
     - -r file:dev-requirements.txt
     - netcdf4
