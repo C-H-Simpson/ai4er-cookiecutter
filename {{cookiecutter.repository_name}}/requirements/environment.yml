@@ -14,6 +14,7 @@ dependencies:
   - geopandas
   - cartopy
   - regionmask
+  - descartes
   - pip:
     - -r file:dev-requirements.txt
     - netcdf4
